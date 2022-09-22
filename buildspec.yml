@@ -7,4 +7,7 @@ hooks:
     BeforeInstall:
         - location: install_httpd.sh
           runas: root
+artifacts:
+  files:
+    - ‘s3://rn-git-cicd/git-pipeline-demo/SourceArti/*'
           
