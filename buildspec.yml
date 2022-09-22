@@ -1,13 +1,30 @@
 version: 0.2
-os: linux
-files:
-     - source: /index.html
-       destination: /var/www/html/
-hooks:
-    BeforeInstall:
-        - location: install_httpd.sh
-          runas: root
+
+phases: 
+    build:
+        commands:
+            - echo "Build block"
+            - ls
+    post_build:
+        commands:
+            - echo "Post build phase"
 artifacts:
-  files:
-    - ‘**/*'
+    files:
+        - index.html
+        - appspec.yml
+    discard-paths: yes
+
+
+# version: 0.2
+# os: linux
+# files:
+#      - source: /index.html
+#        destination: /var/www/html/
+# hooks:
+#     BeforeInstall:
+#         - location: install_httpd.sh
+#           runas: root
+# artifacts:
+#   files:
+#     - ‘**/*'
           
