@@ -12,6 +12,7 @@ phases:
             - echo "Post build phase"
 artifacts:
     files:
+        - install_httpd.sh
         - index.html
         - appspec.yml
     discard-paths: yes
